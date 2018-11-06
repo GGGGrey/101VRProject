@@ -1,0 +1,423 @@
+@charset "UTF-8";
+* {
+    padding: 0;
+    margin: 0;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    color: #555;
+    font-size: 16px;
+    font-family: "Arial", "Microsoft YaHei", "黑体", "宋体", sans-serif;
+}
+
+a {
+    color: #555;
+    text-decoration: none;
+}
+
+/*侧边栏*/
+.sidebar {
+    height: 100%;
+    width: 256px;
+    float: left;
+    background-color: #3d485d;
+}
+
+.vr_logo_box {
+    height: 64px;
+    background: url("../images/logo_bg.png");
+}
+
+.vr_logo {
+    background: url("../images/logo.png") no-repeat center center;
+    height: 100%;
+    display: block;
+}
+
+/*侧边栏----【课程列表】*/
+.vr_course {
+    height: 49px;
+    text-align: center;
+    line-height: 49px;
+    color: #f2f2f2;
+    cursor: default;
+    background-color: #354052;
+}
+
+/*侧边栏----列表各个课程栏目样式*/
+nav li {
+    height: 58px;
+    cursor: pointer;
+    position: relative;
+}
+
+nav li a {
+    padding-left: 58px;
+    padding-bottom: 3px;
+    line-height: 58px;
+}
+
+/*鼠标经过样式修改*/
+nav li:hover {
+    background-color: #19b0fb;
+}
+
+nav li:hover a {
+    color: #ffffff;
+    background: url("../images/icon_class_pre.png") no-repeat 28px 2px;
+}
+
+/*li点击后样式*/
+.this_select {
+    background-color: #4f5f79;
+}
+
+/*li中a标签普通态*/
+.this_selectA_nor {
+    color: #939eb2;
+    background: url("../images/icon_class_nor.png") no-repeat 28px 2px;
+}
+
+/*li中a标签点击态*/
+.this_selectA_pre {
+    color: white;
+    background: url("../images/icon_class_pre.png") no-repeat 28px 2px;
+}
+
+.this_select::before {
+    background: #19b0fb;
+    position: absolute; /*需要脱标*/
+    top: 0;
+    left: 0;
+    height: 58px;
+    width: 4px;
+    content: ''; /*撑开盒子*/
+    /*float: left;*/
+}
+
+/*右侧主体部分*/
+.content {
+    height: 100%;
+    background-color: #edf2f6;
+    overflow: auto; /*！！！！！*/
+    /*position: relative;*/
+}
+
+.content_top {
+    height: 63px;
+    background-color: #ffffff;
+    border-bottom: 1px solid #e2e2e2;
+}
+
+/*主体部分--用户信息*/
+.user_info {
+    display: inline-block; /*！！！！！*/
+    color: #a0a0a0;
+    font-size: 14px;
+    line-height: 22px
+}
+
+.user_name {
+    margin-top: 20px;
+    margin-left: 52px;
+    background: url("../images/icon_user.png") no-repeat left 2px;
+    padding-left: 18px;
+    padding-right: 16px;
+    border-right: 1px solid #edf2f6;
+}
+
+.user_id {
+    background: url(../images/icon_id.png) no-repeat left 2px;
+    padding-left: 26px;
+    margin-left: 16px;
+}
+
+/*主体部分--顶部右侧选择框*/
+.vr_extend {
+    float: right;
+    margin-top: 16px;
+    margin-right: 54px;
+    display: inline-block;
+}
+
+.vr_extend select {
+    color: #16a4fa;
+    line-height: 34px;
+    width: 90px;
+    height: 28px;
+    border: 1px solid #16a4fa;
+}
+
+.content_header {
+    height: 48px;
+    background-color: #fafbfd;
+    border-bottom: 1px solid #e2e2e2;
+}
+
+.tab {
+    /*color: #16a4fa;    !*选中后的颜色值*!*/
+    color: #4d5b67; /*未选中的颜色值*/
+    margin-left: 36px;
+    margin-right: 31px;
+    font-size: 18px;
+    line-height: 20px;
+    display: inline-block;
+    padding-left: 19px;
+    padding-right: 19px;
+    padding-top: 18px;
+    padding-bottom: 9px;
+    position: relative;
+}
+
+.divide_line {
+    content: "";
+    background-color: #f0f4f8;
+    height: 30px;
+    width: 1px;
+    display: inline-block;
+    position: absolute;
+    top: 10px;
+    left: 140px;
+    cursor: default;
+}
+
+/*鼠标经过tab的样式*/
+.content_header .tab:hover {
+    color: #16a4fa;
+    border-bottom: 2px solid rgb(22, 164, 250);
+    cursor: pointer;
+}
+
+/*鼠标选中tab的类*/
+.tab_select {
+    color: #16a4fa;
+    border-bottom: 2px solid rgb(22, 164, 250);
+}
+
+/*主体部分右侧上方按钮样式*/
+.btn_group {
+    float: right;
+    width: 290px;
+    height: 36px;
+    margin-right: 34px;
+    margin-top: 8px;
+}
+
+.btn_group .btn {
+    display: inline-block;
+    color: #ffffff;
+    background: url("../images/submit_btn.png");
+    width: 120px;
+    height: 36px;
+    /*background-size: 100% 100%;*/
+    border: 1px solid #1293f9;
+    line-height: 36px;
+    /*position: relative;*/
+    cursor: pointer;
+    margin-right: 20px;
+    font-size: 14px;
+}
+
+.btn_group .btn .submit_icon {
+    display: inline-block;
+    background: url(../images/icon_submit.png) no-repeat;
+    background-size: 20px 20px;
+    width: 20px;
+    height: 20px;
+    vertical-align: middle;
+    margin-bottom: 3px;
+    margin-left: 11px;
+}
+
+.btn_group .btn .add_icon {
+    display: inline-block;
+    background: url(../images/icon_add.png) no-repeat;
+    background-size: 20px 20px;
+    width: 20px;
+    height: 20px;
+    vertical-align: middle;
+    margin-bottom: 3px;
+    margin-left: 11px;
+}
+.search_box {
+    overflow: hidden;
+}
+/*搜索框*/
+.search_bar {
+    float: right;
+    margin-right: 126px;
+    margin-top:22px;
+}
+
+.search_main {
+    display: inline-block;
+    position: relative;
+}
+
+.search_input {
+    width: 310px;
+    height: 32px;
+    margin-right: 11px;
+
+}
+
+.search_icon {
+    position: absolute;
+    display: inline-block;
+    background: #fff url(../images/icon_search.png) no-repeat;
+    width: 20px;
+    height: 18px;
+    left: 292px;
+    top: 50%;
+    margin-top: -9px;
+}
+
+.search_btn {
+    display: inline-block;
+    background: url(../images/query_btn.png);
+    width: 76px;
+    height: 32px;
+    line-height: 32px;
+    text-align: center;
+    border: 1px solid #1293f9;
+    color: #ffffff;
+    cursor: pointer;
+}
+input::placeholder {
+    color: #a0a0a0;
+}
+/*主体部分*/
+.content_main {
+    /*height: 100%;*/
+    margin-top: 27px;
+    margin-left: 37px;
+    /*width: 1200px;*/
+
+}
+/*主体部分中每个item的样式*/
+.content_item {
+    width: 397px;
+    height: 299px;
+    display: inline-block;
+}
+.content_item_headinfo {
+    position: absolute;
+    background-color: rgba(0,0,0,0.6);
+    height: 34px;
+    width: 357px;
+    bottom: 0px;
+
+}
+.content_item_body {
+    background-color: #fafbfd;
+    height: 58px;
+    width: 357px;
+}
+.content_item_headinfo_text {
+    display: inline-block;
+    color: #dedfdc;
+    line-height: 34px;
+    font-size: 14px;
+    padding-right: 6px;
+}
+.content_item_headinfo_name {
+    background: url('../images/friends.png') no-repeat  20px 5px;
+    padding-left: 45px;
+}
+.content_item_btn {
+    margin-left: 65px;
+    display: inline-block;
+    cursor: pointer;
+    margin-top: 6px;
+}
+.content_item_btn:hover .content_item_edit{
+    background: url("../images/edit_nor.png") no-repeat;
+}
+.content_item_btn:hover .content_item_play{
+    background: url("../images/play_nor.png") no-repeat;
+}
+.content_item_btn:hover .content_item_delete{
+    background: url("../images/del_nor.png") no-repeat;
+}
+.content_item_btn:hover .content_item_text{
+    color: orange;
+}
+.content_item_text {
+    font-size: 14px;
+    color: #acacac;
+}
+.content_item_edit {
+    display:block;
+    background: url("../images/edit.png") no-repeat;
+    margin-left: 4px;
+    margin-bottom: 3px;
+    width: 21px;
+    height: 22px;
+}
+.content_item_play {
+    display:block;
+    background: url("../images/play.png") no-repeat;
+    /*margin-top: 6px;*/
+    width: 27px;
+    height: 28px;
+}
+.content_item_delete {
+    display:block;
+    background: url("../images/del.png") no-repeat;
+    padding-left: 2px;
+    width: 21px;
+    height: 24px;
+    margin-left: 3px;
+}
+.content_item_footerText {
+    text-align: center;
+    cursor: default;
+    margin-top: 12px;
+    width: 357px;
+}
+/*缺省图*/
+.default_img {
+    /*width: 149px;*/
+    height: 450px;
+    background: url("../images/icon_resoure_no.png") no-repeat;
+    margin-top: 200px;
+    /*float: left;*/
+    margin-left: 45%;
+    /*left:-*/
+}
+/*底部样式*/
+.content_footer {
+
+    text-align: center;
+    /*margin: 0px auto;*/
+    margin-top: 42px;
+    margin-bottom: 20px;
+    /*position: absolute;*/
+    /*top: 80%;*/
+    /*left: 35%;*/
+    /*width: 320px;*/
+
+}
+.footer_page {
+    display: inline-block;
+    background-color: #e7e7e7;
+    width: 40px;
+    height: 40px;
+    border-radius: 5px;
+    text-align: center;
+    line-height: 40px;
+    margin: 14px;
+    cursor: pointer;
+}
+.footer_page:hover {
+    background-color: #16a4fa;
+    color: #c0e6fe;
+}
+.footer_page_select {
+    background-color: #16a4fa;
+    color: #c0e6fe;
+}

@@ -1,0 +1,175 @@
+<!-- /*
+ * @Author: 郭承哲
+ * @Date: 2018-09-19 10:36:00
+ */ -->
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>101VR创客教室</title>
+    <link rel="stylesheet" type="text/css" media="screen" href="./styles/reset.css"/>
+    <link rel="stylesheet" type="text/css" media="screen" href="./styles/main.css"/>
+    <link rel="stylesheet" type="text/css" media="screen" href="./styles/mask.css"/>
+    <script src="../project/js/layer.js"></script>
+    <!--<script src="../project/js/query.js"></script>-->
+
+</head>
+<body>
+<!--侧边栏-->
+<div class="sidebar">
+    <div class="vr_logo_box">
+        <a href="#" title="101VR创客教室" class="vr_logo"></a>
+    </div>
+    <div class="vr_course">课程列表</div>
+    <nav>
+        <ul>
+            <li><a href="javascript:;" class="this_selectA_nor">全部课程</a></li>
+            <li><a href="javascript:;" class="this_selectA_nor">课程一：静夜思</a></li>
+            <li><a href="javascript:;" class="this_selectA_nor">课程二：红军长征</a></li>
+            <li><a href="javascript:;" class="this_selectA_nor">课程三：活字印刷术</a></li>
+            <li><a href="javascript:;" class="this_selectA_nor">课程四：郑和下西洋</a></li>
+            <li><a href="javascript:;" class="this_selectA_nor">课程五：梦想之家</a></li>
+        </ul>
+    </nav>
+</div>
+<!--主体部分-->
+<div class="content">
+    <div class="content_top">
+        <a href="##" class="user_info user_name">用户名：郭承哲</a>
+        <a href="##" class="user_info user_id">身份 : 学生</a>
+        <div class="vr_extend">
+            <select>
+                <option>设备选择</option>
+                <option>IOS</option>
+                <option>Android</option>
+            </select>
+        </div>
+    </div>
+    <div class="content_header">
+        <div class="tab">
+            我的作品
+            <div class="divide_line"></div>
+        </div>
+        <div class="tab">班级作品</div>
+        <div class="btn_group">
+            <div class="btn">
+                <span class="submit_icon"></span>
+                提交作品
+            </div>
+            <div class="btn">
+                <span class="add_icon"></span>
+                新建作品
+            </div>
+        </div>
+    </div>
+    <!--<div class="content_body">-->
+    <!--<div class="search_bar">-->
+    <!--<div class="search_main">-->
+    <!--<input type="text" class="search_input" placeholder="请输入要查询的作品名">-->
+    <!--<span class="search_icon"></span>-->
+    <!--</div>-->
+    <!--<div class="search_btn">搜索</div>-->
+    <!--</div>-->
+    <!--<div class="content_main"></div>-->
+    <!--</div>  -->
+    <div class="search_box">
+        <div class="search_bar">
+            <div class="search_main">
+                <input type="text" class="search_input" placeholder="请输入要查询的作品名">
+                <span class="search_icon"></span>
+            </div>
+            <div class="search_btn">搜索</div>
+        </div>
+    </div>
+    <div class="content_main"></div>
+    <div class="content_footer">
+
+    </div>
+</div>
+<!--点击新建按钮---弹出弹窗-->
+<div class="mask">
+    <div class="popup">
+        <div class="popup_header">
+            <span class="popup_header_closebtn"></span>
+            新建作品
+        </div>
+        <div class="popup_body">
+            <div class="works_name">
+                <label for="works_name_textid">资源名称</label>
+                <input type="text" id="works_name_textid">
+                <span></span>
+            </div>
+            <div class="works_author">
+                <label for="works_author_divid">作者</label>
+                <div id="works_author_divid"></div>
+                <div class="works_author_btn"></div>
+                <span></span>
+            </div>
+            <div class="works_img">
+                <label for="works_img_imgid">配图</label>
+                <input type="file" id="works_img_imgid">
+                <span></span>
+            </div>
+            <div class="works_detail">
+                <label for="works_detail_textid">简介</label>
+                <textarea name="" cols="30" rows="10" id="works_detail_textid"></textarea>
+            </div>
+        </div>
+        <div class="popup_footer">
+            <button>确定提交</button>
+            <span>提交后显示在班级作品区</span>
+        </div>
+    </div>
+</div>
+<!--点击弹窗中添加作者按钮后的弹窗-->
+<div class="mask">
+    <div class="popup_author">
+        <div class="popup_author_header">
+        <h3>班级成员</h3>
+            <span class="popup_header_closebtn"></span>
+        </div>
+        <div class="popup_author_body">
+            <div class="popup_author_body_left">
+                <input class="popup_author_body_left_search" placeholder="请输入人名">
+                <div class="popup_author_body_left_txt">
+                    <div class="popup_author_body_item popup_author_body_left_txt_nor">李明</div>
+                    <div class="popup_author_body_item popup_author_body_left_txt_nor">张三疯</div>
+                    <div class="popup_author_body_item popup_author_body_left_txt_nor">吴老二</div>
+                    <div class="popup_author_body_item popup_author_body_left_txt_nor">斯琴高娃</div>
+                    <div class="popup_author_body_item popup_author_body_left_txt_nor">周杰伦</div>
+                    <div class="popup_author_body_item popup_author_body_left_txt_nor">吴克群</div>
+                    <div class="popup_author_body_item popup_author_body_left_txt_nor">霍江华</div>
+                    <div class="popup_author_body_item popup_author_body_left_txt_nor">张张站</div>
+                    <div class="popup_author_body_item popup_author_body_left_txt_nor">李连杰</div>
+                    <div class="popup_author_body_item popup_author_body_left_txt_nor">王宝强</div>
+                    <div class="popup_author_body_item popup_author_body_left_txt_nor">王小明</div>
+                    <div class="popup_author_body_item popup_author_body_left_txt_nor">张强</div>
+                    <div class="popup_author_body_item popup_author_body_left_txt_nor">李四</div>
+                </div>
+            </div>
+            <div class="popup_author_body_btns">
+                <button>添加</button>
+                <button>删除</button>
+            </div>
+            <div class="popup_author_body_right">
+                <!--<div class="popup_author_body_right_txt">-->
+                <!--</div>-->
+            </div>
+        </div>
+        <div class="popup_author_footer">
+            <button>确定</button>
+        </div>
+    </div>
+</div>
+
+<script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="./js/Static.js"></script>
+<script src="js/content_main.js"></script>
+<script src="./js/sidebar.js"></script>
+<script src="js/mask.js"></script>
+<script src="js/page.js"></script>
+
+</body>
+
+</html>
