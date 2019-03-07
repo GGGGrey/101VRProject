@@ -24,7 +24,7 @@ document.getElementsByClassName("btn")[1].onclick = function () {
     document.getElementsByClassName("mask")[0].style.display = "block";
 };
 
-//创建作品项
+//创建作品项 图片路径
 function CreateItem(pic, author, title, time) {
     //整个item作品
     let obj_item = document.createElement("div");
@@ -73,7 +73,7 @@ function CreateItem(pic, author, title, time) {
     obj_body_btn3.className = "content_item_btn";
     // obj_body_btn3.innerHTML="<img src='./images/del.png' class='content_item_delete'><span class='content_item_text'>删除</span>" ;
     obj_body_btn3.innerHTML = "<div class='content_item_delete'></div><span class='content_item_text'>删除</span>"
-//作品名
+    //作品名
     let obj_foot = document.createElement("div");
     obj_item.appendChild(obj_foot);
     obj_foot.className = "content_item_footerText";
