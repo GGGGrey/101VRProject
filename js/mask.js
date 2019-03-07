@@ -8,7 +8,6 @@ var wauthor_id = document.getElementById("works_author_divid");
 var wauthor_btn = document.getElementsByClassName("works_author_btn")[0];
 var wimg = document.getElementsByClassName("works_img")[0];
 var wimg_id = document.getElementById("works_img_imgid");
-var wdetail = document.getElementsByClassName("works_detail")[0];
 var wdetail_id = document.getElementById("works_detail_textid");
 var wauthor_popup = document.getElementsByClassName("popup_author")[0];
 var wauthor_popup_body_left = document.getElementsByClassName("popup_author_body_left_txt")[0];
@@ -20,13 +19,16 @@ p_hd.querySelector("span").onclick = function (ev) {
     // 清空弹窗中所有文本内容,获取input标签内容用value
     wname_id.value = "";
     wname.querySelector("span").innerHTML = "";
-    wauthor_id.value = "";
+    wauthor_id.innerHTML = "";
     wauthor.querySelector("span").innerHTML = "";
     wimg_id.value = "";
     wimg.querySelector("span").innerHTML = "";
     wdetail_id.value = "";
+//    还得清空作者弹窗的内容----右侧栏移到左侧
+    $(".popup_author_body_right").children().each(function () {
+        wauthor_popup_body_left.appendChild(this);
+    });
 };
-
 //点击确定提交
 p_ft.querySelector("button").onclick = function () {
     //count用于计数，判断资源名、作者、图片都不为空count=3
@@ -58,30 +60,25 @@ p_ft.querySelector("button").onclick = function () {
     }
     // 提交成功后
     if (count == 3) {
-        //添加数据到json文件中
-        var fs=require("fs");
-        var msg="1111";
-        fs.writeFile("http://localhost/101VRProject/json/work_data.json",msg,'utf8',function (err) {
-            if(err){
-                console.log("失败"+err);
 
-            }
-            else{
-                console.log("成功");
-            }
-        });
         $.ajax({
                 type: "POST",
                 url: "http://localhost/101VRProject/json/work_data.json",
                 contentType: "application/json; charset=utf-8",
-                data: JSON.stringify({
-                    "pic": "./images/bg2.png",
-                    "auther": "李冉、徐佳佳、李婷婷、张二",
-                    "time": "2016/08/04 10:50",
-                    "title": "班级作品：郑和下西洋1"
-                }),
-                success: function () {
-                    console.log("成功");
+                // data: JSON.stringify({
+                //     "pic": "./images/bg2.png",
+                //     "auther": "李冉、徐佳佳、李婷婷、张二",
+                //     "time": "2019/01/02 10:50",
+                //     "title": "班级作品：郑和下西洋1"
+                // }),
+            data: {
+                "pic": "./images/bg2.png",
+                "auther": "李冉、徐佳佳、李婷婷、张二",
+                "time": "2019/01/02 10:50",
+                "title": "班级作品：郑和下西洋1"
+            },
+                success: function (data) {
+                    console.log("成功"+data);
                     // alert("DATA SUCCESS" + data);
                 }
             }
@@ -118,7 +115,8 @@ wauthor_btn.onclick = function () {
 //作者弹窗--关闭按钮
 wauthor_popup.querySelector("span").onclick = function () {
     //遮罩关闭
-    document.getElementsByClassName("mask")[1].style.display = "none";
+    // document.getElementsByClassName("mask")[1].style.display = "none";
+    document.getElementsByClassName("popup_author_footer")[0].querySelector("button").onclick();
 };
 
 //作者弹窗--添加按钮,1.左侧选中类添加到右侧。2.右侧选中类清除
@@ -161,7 +159,8 @@ document.getElementsByClassName("popup_author_body_left_search")[0].onkeydown = 
 //作者弹窗--确定按钮
 document.getElementsByClassName("popup_author_footer")[0].querySelector("button").onclick = function () {
     //关闭作者弹窗
-    wauthor_popup.querySelector("span").onclick();
+    // wauthor_popup.querySelector("span").onclick();
+    document.getElementsByClassName("mask")[1].style.display = "none";
 //    清空作者栏
     document.getElementById("works_author_divid").innerHTML = "";
 //    循环读取右侧成员存入作者栏

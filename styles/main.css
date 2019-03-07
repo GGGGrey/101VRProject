@@ -369,6 +369,7 @@ input::placeholder {
     display:block;
     background: url("../images/del.png") no-repeat;
     padding-left: 2px;
+    padding-bottom:2px;
     width: 21px;
     height: 24px;
     margin-left: 3px;

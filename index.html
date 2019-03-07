@@ -11,7 +11,7 @@
     <link rel="stylesheet" type="text/css" media="screen" href="./styles/reset.css"/>
     <link rel="stylesheet" type="text/css" media="screen" href="./styles/main.css"/>
     <link rel="stylesheet" type="text/css" media="screen" href="./styles/mask.css"/>
-    <script src="../project/js/layer.js"></script>
+
     <!--<script src="../project/js/query.js"></script>-->
 
 </head>
@@ -162,7 +162,12 @@
         </div>
     </div>
 </div>
-
+<script>
+    window.onbeforeunload = function (e) {
+        alert("确认离开");
+        return (e || window.event).returnValue = '有信息未保存，确认离开？！';
+    }
+</script>
 <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
 <script src="./js/Static.js"></script>
 <script src="js/content_main.js"></script>

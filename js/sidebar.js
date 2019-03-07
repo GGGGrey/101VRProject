@@ -6,12 +6,15 @@ for (var i = 0; i < sidebarLi.length; i++) {
     //记录每个侧边栏的索引
     sidebarLi[i].index=i;
     sidebarLi[i].onclick = function () {
-        //每次点击后先清除点击样式
+        console.log(this.index);
+        //JQ
+        $(".sidebar li").removeClass("this_select").children("a").attr("class","this_selectA_nor");
+        ///JS:每次点击后先清除点击样式
         for (var j = 0; j < sidebarLi.length; j++) {
             // li标签
-            sidebarLi[j].classList.remove("this_select");
+            // sidebarLi[j].classList.remove("this_select");
             //a标签
-            sidebarLi[j].firstChild.setAttribute("class", "this_selectA_nor");
+            // sidebarLi[j].firstChild.setAttribute("class", "this_selectA_nor");
         }
         //点击后添加选中样式li和a
         this.classList.add("this_select");
