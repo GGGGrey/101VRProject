@@ -1,5 +1,6 @@
 var p_hd = document.getElementsByClassName("popup_header")[0];
 var p_ft = document.getElementsByClassName("popup_footer")[0];
+var popup=document.getElementsByClassName('popup')[0];
 //弹窗主体部分
 var wname = document.getElementsByClassName("works_name")[0];
 var wname_id = document.getElementById("works_name_textid");
@@ -12,6 +13,37 @@ var wdetail_id = document.getElementById("works_detail_textid");
 var wauthor_popup = document.getElementsByClassName("popup_author")[0];
 var wauthor_popup_body_left = document.getElementsByClassName("popup_author_body_left_txt")[0];
 var wauthor_popup_body_right = document.getElementsByClassName("popup_author_body_right")[0];
+//设置弹窗拖拽功能
+p_hd.onmousedown=function (e) {
+//
+    var spaceX=e.clientX-popup.offsetLeft;
+    var spaceY=e.clientY-popup.offsetTop;
+//    移动事件
+    document.onmousemove=function (e) {
+    //    新可视区域的
+        p_hd.style.cursor='move';
+        //控制鼠标在可视区域内
+        if(e.clientX>0&&e.clientX<document.body.clientWidth&&e.clientY>0&&e.clientY<document.body.clientHeight){
+            var x=e.clientX-spaceX;
+            var y=e.clientY-spaceY;
+        }
+
+
+        //因为css中为了居中设置了transform移动了半个框的大小,保证框在可视区域内
+        if(x>popup.offsetWidth/2&&x<document.body.clientWidth-popup.offsetWidth/2){
+            popup.style.left=x+'px';
+        }
+        if(y>popup.offsetHeight/2&&y<document.body.clientHeight-popup.offsetHeight/2){
+            popup.style.top=y+'px';
+
+        }
+    }
+}
+p_hd.onmouseup=function (e) {
+    document.onmousemove=null;
+    p_hd.style.cursor='default'
+
+}
 // 关闭窗口按钮
 p_hd.querySelector("span").onclick = function (ev) {
     //关闭弹窗

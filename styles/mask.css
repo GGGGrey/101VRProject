@@ -14,9 +14,12 @@
     background-color: #fff;
     position: fixed;
     top: 50%;
-    margin-left: -400px;
+    /*margin-left: -400px;*/
     left: 50%;
-    margin-top: -300px;
+
+    transform:translateX(-50%) translateY(-50%);
+    /*margin-top: -300px;*/
+
     border-radius: 8px;
 }
 
@@ -45,7 +48,7 @@
 }
 
 .popup_body {
-    height: 500px;
+    height: 455px;
 }
 
 .works_name {
